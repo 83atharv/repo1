@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Expense Tracker</h1>
+        <nav>
+            <button onclick="showSection('expenses')">Expense Tracker</button>
+            <button onclick="showSection('trip-planner')">Trip Activity Planner</button>
+            <button onclick="showSection('subscriptions')">Subscription Tracker</button>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="expenses" class="active">
+            <h2>Expense Tracker</h2>
+            <form id="expense-form">
+                <input type="text" id="expense-name" placeholder="Expense Name" required>
+                <input type="number" id="expense-amount" placeholder="Amount (₹)" required>
+                <input type="text" id="expense-payer" placeholder="Paid By (Name)" required>
+                <button type="submit">Add Expense</button>
+            </form>
+            <ul id="expense-list"></ul>
+            <h3>Total: ₹<span id="total-expense">0.00</span></h3>
+        </section>
+
+        <section id="trip-planner" class="hidden">
+            <h2>Trip Activity Planner</h2>
+            <form id="activity-form">
+                <input type="text" id="activity-name" placeholder="Activity Name" required>
+                <input type="number" id="activity-expense" placeholder="Activity Expense (₹)" required>
+                <button type="submit">Add Activity</button>
+            </form>
+            <ul id="activity-list"></ul>
+            <h3>Total Activity Expenses: ₹<span id="total-activity-expenses">0.00</span></h3>
+        </section>
+
+        <section id="subscriptions" class="hidden">
+            <h2>Subscription Tracker</h2>
+            <form id="subscription-form">
+                <input type="text" id="subscription-name" placeholder="Subscription Name" required>
+                <input type="number" id="subscription-cost" placeholder="Cost (₹)" required>
+                <input type="date" id="subscription-due-date" required>
+                <button type="submit">Add Subscription</button>
+            </form>
+            <ul id="subscription-list"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
